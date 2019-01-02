@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     slideDerection: '',
-    data: {}
+    data: null
   },
   mutations: {
     changeSlide (state, derection) {

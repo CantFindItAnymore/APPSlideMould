@@ -9,13 +9,16 @@
         'animated fadeInDown': slideDerection === 'previous'
       }"
     >
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </div>
   </div>
 </template>
 
 <script>
 import {mapState} from 'vuex'
+import { list } from '@/unit/util.js'
 export default {
   name: 'App',
   computed: {
@@ -32,16 +35,12 @@ export default {
       this.startY = e.touches[0].clientY
     },
     handleEnd (e) {
-      const list = ['/', '/page2']
-      this.endY = e.changedTouches[0].screenY - 176
-      // console.log('sh', this.startY - this.endY - 176)
-      if (this.endY - this.startY >= 20) {
+      this.endY = e.changedTouches[0].clientY
+      if (this.endY - this.startY >= 40) {
         // 下滑去上一頁
-        console.log('xh', this.endY - this.startY)
         list[this.$route.meta.index - 1] && this.$router.push(list[this.$route.meta.index - 1])
-      } else if (this.startY - this.endY >= 40) {
+      } else if (this.endY - this.startY <= -40) {
         // 上滑去下一頁
-        console.log('sh', this.startY - this.endY)
         list[this.$route.meta.index + 1] && this.$router.push(list[this.$route.meta.index + 1])
       }
     }

@@ -21,11 +21,11 @@ fastClick.attach(document.body)
 
 // 在vue原型上添加封装好的请求方法
 let commonModel = new CommonModel()
-Vue.prototype.getData = commonModel.getData
-// Vue.prototype.getUserInfo = commonModel.getUserInfo
+// Vue.prototype.getData = commonModel.getData
+Vue.prototype.getUserInfo = commonModel.getUserInfo
 
 router.beforeEach((to, from, next) => {
-  // console.log(store)
+  commonModel.getData(1)
   if (to.meta.index > from.meta.index) {
     // 上滑进入下一页
     store.commit('changeSlide', 'next')
