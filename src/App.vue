@@ -39,7 +39,7 @@ export default {
       if (this.endY - this.startY >= 40) {
         // 下滑去上一頁
         list[this.$route.meta.index - 1] && this.$router.push(list[this.$route.meta.index - 1])
-      } else if (this.endY - this.startY <= -40) {
+      } else if (this.endY - this.startY <= -40 || this.endY - this.startY === 0) {
         // 上滑去下一頁
         list[this.$route.meta.index + 1] && this.$router.push(list[this.$route.meta.index + 1])
       }
@@ -49,6 +49,7 @@ export default {
 </script>
 
 <style>
+@import './unit/font/font.css';
 .container {
   position: absolute;
   top: 0;
@@ -57,7 +58,7 @@ export default {
   bottom: 0;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: HYDianYaTiJ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
