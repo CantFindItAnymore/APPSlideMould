@@ -26,11 +26,11 @@ export default {
     font-size 36px
     line-height 180%
     .delay1
-      animation-delay 1150ms
+      animation-delay 1000ms
     .delay2
-      animation-delay 1300ms
+      animation-delay 1100ms
     .delay3
-      animation-delay 1450ms
+      animation-delay 1200ms
     .delay4
-      animation-delay 1600ms
+      animation-delay 1300ms
 </style>

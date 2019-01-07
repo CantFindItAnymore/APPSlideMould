@@ -15,10 +15,12 @@ class Http {
       .then(res => res.json())
       .then(res => {
         // console.log('服務器返回的結果:', res)
+        // 注意此处还要处理错误码
+        //
         params.success && params.success(res)
       })
       .catch(err => {
-        console.log('訪問服務器出錯:', err)
+        console.log('访问服务器出错:', err)
       })
   }
 }

@@ -40,7 +40,7 @@ export default {
         // 下滑去上一頁
         list[this.$route.meta.index - 1] && this.$router.push(list[this.$route.meta.index - 1])
       } else if (this.endY - this.startY <= -40 || this.endY - this.startY === 0) {
-        // 上滑去下一頁
+        // 上滑或点击去下一頁
         list[this.$route.meta.index + 1] && this.$router.push(list[this.$route.meta.index + 1])
       }
     }
@@ -63,6 +63,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
 }
 </style>
