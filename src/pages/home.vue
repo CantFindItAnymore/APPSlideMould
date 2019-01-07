@@ -1,11 +1,7 @@
 <template>
   <div class="home">
-    <ul ref="ul">
-      <li class="animated fadeInUp delay1">2018</li>
-      <li class="animated fadeInUp delay2">您在易来客运</li>
-      <li class="animated fadeInUp delay3">度过的</li>
-      <li class="animated fadeInUp delay4">日日夜夜</li>
-    </ul>
+    <img class="lookBtn" src="../assets/images/立即查看.png">
+    <img class="selfBtn" src="../assets/images/查看报告.png">
   </div>
 </template>
 
@@ -18,19 +14,20 @@ export default {
   .home
     width 100vw
     height 100vh
-    background url(../assets/images/5.jpg)
+    background url(../assets/images/1.png)
     background-size cover
     background-repeat no-repeat
     background-position center
-    color #fff
-    font-size 36px
-    line-height 180%
-    .delay1
-      animation-delay 1150ms
-    .delay2
-      animation-delay 1300ms
-    .delay3
-      animation-delay 1450ms
-    .delay4
-      animation-delay 1600ms
+    .lookBtn
+      position relative
+      top 50%
+      transform translateY(-50%)
+      width 352px
+      height 78px
+    .selfBtn
+      position absolute
+      bottom 0
+      left 0
+      right 0
+      width 100%
 </style>
